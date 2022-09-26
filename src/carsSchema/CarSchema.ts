@@ -1,5 +1,6 @@
 import { z as zod } from 'zod'
 export const CarSchema = () => {
+    // const SELLERTYPE = ["First Owner", "Second Owner", "Third Owner"] as const
     const carSchema = zod.object({
         name: zod.string().min(3).max(200),
         year: zod.string().refine(val => Number(val) > 0, {
@@ -19,6 +20,5 @@ export const CarSchema = () => {
 
     return {
         carSchema
-
     }
 }

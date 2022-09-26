@@ -1,0 +1,57 @@
+Redux steps:
+1. Design the store
+
+const state = {count:0,cars};
+ 
+2. Define the actions
+
+este un js object
+
+const action = {
+    type: "INCREMENT_BY_VALUE"
+    payload:{
+        number:89,
+        reset:true,
+    }
+} ;
+
+const action2= {
+    type:"INCREMENT",
+};
+const action3= {
+    type:"DECREMENT",
+};
+
+3. Create the reducer
+// reducer = JS pure function that takes the state and action and returns the new state 
+
+const reducer = (state = initialState, action:AnyAction)=>{
+    if(action.type === "INCREMENT"){
+        return {... state,count: state.count+1};
+    }
+
+    sau 
+
+    const {count}=state;
+    const {payload,type}=action;
+
+    switch(type){
+        case "INCREMENT":
+            return {... state,count: state.count+1};
+        case "DECREMENT":
+            return {... state,count: state.count-1};
+        case "INCREMENT_BY_VALUE":
+            return {... state,count: state.count+ action.payload.number};
+        default:
+            return state;
+    }
+
+};
+
+4. Create the store 
+    import {legacy_createStore as createStore,AnyAction} from "Redux"
+    const store = createStore(reducer)
+
+5. Dispatch an action
+
+    store.dispatch(action1);
