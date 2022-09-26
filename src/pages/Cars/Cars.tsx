@@ -3,6 +3,7 @@ import { IconAlertCircle, IconCheck } from "@tabler/icons"
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import { useCarsQuery } from "../../hooks/queries/useCarsQuery"
+import { useCarSelector } from "../../hooks/selectors/useCarSelector"
 import { CarCard } from "./components/CarCard"
 import { CreateCar } from "./components/CreateCar/CreateCar"
 
@@ -11,6 +12,8 @@ export const Cars = () => {
     const [opened, setOpened] = useState(false);
     const { isLoading, isError, data: cars } = useCarsQuery()
     const location = useLocation();
+    const carsRedux = useCarSelector();
+    console.log(carsRedux);
 
     if (isLoading) {
         return <Center>

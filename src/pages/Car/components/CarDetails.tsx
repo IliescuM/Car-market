@@ -15,7 +15,7 @@ export const CarDetails = ({ car }: ICarDetailsProps) => {
         <div >
 
             <Paper
-                className={clsx(classes.movieCard, true && classes.movieCard2,)}
+                className={clsx(classes.movieCard, true && classes.movieCard2, classes)}
                 shadow='sm'
                 p='lg'
                 radius='xs'

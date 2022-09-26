@@ -1,21 +1,11 @@
-import { AnyAction } from "redux";
-import * as counterActionTypes from "./counterActionTypes"
-const initialState = { count: 0 };
+import { carsReducer } from './carsSlice';
+import { combineReducers } from "redux";
+import { counterReducer } from "./counterSlice";
 
 
-export const reducer = (state = initialState, action: AnyAction) => {
-    const { count } = state;
-    const { payload, type } = action;
+export const reducer = combineReducers({
+    counter: counterReducer,
+    cars: carsReducer,
+});
 
-    switch (type) {
-        case counterActionTypes.INCREMENT:
-            return { ...state, count: state.count + 1 };
-        case counterActionTypes.DECREMENT:
-            return { ...state, count: state.count - 1 };
-        case counterActionTypes.INCREMENT_BY_VALUE:
-            return { ...state, count: state.count + action.payload.number };
-        default:
-            return state;
-    }
 
-};
