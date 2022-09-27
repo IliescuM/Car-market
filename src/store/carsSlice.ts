@@ -1,19 +1,32 @@
-import { AnyAction } from "redux";
-import * as carsActionTypes from "./carsActionTypes"
+import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     cars: [],
+    search: '',
 };
 
-
-
-export const carsReducer = (state = initialState, action: AnyAction) => {
-    const { payload, type } = action;
-
-    switch (type) {
-        case carsActionTypes.SET_CARS:
-            return { ...state, cars: payload.cars };
-        default:
-            return state;
+const carsSlice = createSlice({
+    name: "cars",
+    initialState: initialState,
+    reducers: {
+        setCars(state, action) {
+            state.cars = action.payload;
+        },
+        setSearchByName(state, action) {
+            state.search = action.payload
+        }
     }
+});
+export const { setCars, setSearchByName } = carsSlice.actions;
+export default carsSlice.reducer;
 
-};
+// (state = initialState, action: AnyAction) => {
+//     const { payload, type } = action;
+
+//     switch (type) {
+//         case carsActionTypes.SET_CARS:
+//             return { ...state, cars: payload.cars };
+//         default:
+//             return state;
+//     }
+
+// };

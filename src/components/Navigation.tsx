@@ -4,16 +4,20 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { Navbar, NavLink as MantineNavLink } from "@mantine/core";
 import { IconHome, IconQuestionMark, IconCar } from "@tabler/icons";
 import { Counter } from "./Counter";
+import { useState } from "react";
 export const Navigation = () => {
     const navigate = useNavigate()
+
 
     const handleRedirect = () => {
         navigate('/')
     }
-    return <Navbar width={{ base: 300 }}>
-        <Center><Counter></Counter></Center>
+    return <>
+
 
         <div>
+            <Center><Counter></Counter></Center>
+
             <NavLink to="/home">
                 {
                     ({ isActive }) => <MantineNavLink
@@ -50,8 +54,9 @@ export const Navigation = () => {
 
 
         </div>
+    </>
 
-    </Navbar>
+
 
 
 

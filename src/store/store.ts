@@ -1,5 +1,12 @@
-import { legacy_createStore as createStore } from "redux"
-import { reducer } from './reducer'
+import counterReducer from './counterSlice';
+import { configureStore } from "@reduxjs/toolkit"
+import carsReducer from './carsSlice';
 
-export const store = createStore(reducer)
+export const store = configureStore({
+    reducer: {
+        counter: counterReducer,
+        cars: carsReducer,
+    }
+
+});
 export type RootState = ReturnType<typeof store.getState>

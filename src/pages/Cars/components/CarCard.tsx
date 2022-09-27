@@ -4,20 +4,21 @@ import React from 'react'
 import { ICar } from '../../../types/ICar';
 import { useStyles } from "./style"
 import { useNavigate } from "react-router-dom"
+import { useColorScheme } from '@mantine/hooks';
 
 
 interface ICarCardProps {
     car: ICar;
 }
 export const CarCard = ({ car }: ICarCardProps) => {
-    const { classes } = useStyles()
+    const colorScheme = useColorScheme();
     const navigate = useNavigate()
     const handleRedirect = () => {
         navigate(`/cars/${car._uuid}`)
     }
     return (
         <Card
-            className={clsx(classes.movieCard, true && classes.movieCard2)}
+            color={colorScheme === 'dark' ? 'x#343434' : 'white'}
             shadow='sm'
             p='lg'
             radius='md'

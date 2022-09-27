@@ -1,15 +1,15 @@
 import { Button, Text } from "@mantine/core"
 import { useDispatch } from "react-redux"
 import { useCountSelector } from "../hooks/selectors/useCountSelector"
-import * as ActionCreators from "../store/counterActionCreators"
+import { decrement, increment } from "../store/counterSlice";
 export const Counter = () => {
     const dispatch = useDispatch();
     const count = useCountSelector();
     const handleIncrement = () => {
-        dispatch(ActionCreators.increment())
+        dispatch(increment())
     };
     const handleDecrement = () => {
-        dispatch(ActionCreators.decrement())
+        dispatch(decrement())
     };
     return <>
         <Button
