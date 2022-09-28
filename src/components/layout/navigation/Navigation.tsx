@@ -1,10 +1,9 @@
 
-import { Button, Center } from "@mantine/core";
+import { Button, Center, Group, Stack } from "@mantine/core";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Navbar, NavLink as MantineNavLink } from "@mantine/core";
 import { IconHome, IconQuestionMark, IconCar } from "@tabler/icons";
-import { Counter } from "./Counter";
-import { useState } from "react";
+import { Counter } from "../../Counter";
 export const Navigation = () => {
     const navigate = useNavigate()
 
@@ -15,7 +14,7 @@ export const Navigation = () => {
     return <>
 
 
-        <div>
+        <Stack spacing="xl">
             <Center><Counter></Counter></Center>
 
             <NavLink to="/home">
@@ -53,7 +52,7 @@ export const Navigation = () => {
 
 
 
-        </div>
+        </Stack>
     </>
 
 

@@ -1,15 +1,17 @@
-import { Navigation } from "../Navigation";
+import { Navigation } from "./navigation/Navigation";
 import { Outlet } from "react-router-dom";
-import { AppShell, useMantineTheme, Header as HeaderMantine, MediaQuery, Burger, Navbar } from "@mantine/core";
-import { Header } from "./Header";
+import { AppShell, useMantineTheme, Header as HeaderMantine, MediaQuery, Burger, Navbar, Box } from "@mantine/core";
+import { Header } from "./header/Header";
 import { useState } from "react";
-import { Footer } from "./Footer";
-
+import { PremadeFooterLinks } from "./footer/PremadeFooterLinks";
+import footerData from '../../MockData/footerData.json'
+import { PremadeHeader } from "./header/PremadeHeader";
 
 
 export const Layout = () => {
     const themeLayout = useMantineTheme();
     const [opened, setOpened] = useState(false);
+    const data = footerData.data
 
     return (
         <div>
@@ -30,24 +32,25 @@ export const Layout = () => {
                         <Navigation></Navigation>
                     </Navbar>
                 }
-                header={
-                    <HeaderMantine height={60} p="xs">
-                        <div style={{ display: 'flex', alignItems: 'center', height: "100%" }}>
-                            <MediaQuery largerThan="sm" styles={{ display: "none" }}>
-                                <Burger
-                                    opened={opened}
-                                    onClick={() => setOpened((o) => !o)}
-                                    size="sm"
-                                    color={themeLayout.colors.gray[6]}
-                                    mr="xl"
-                                />
-                            </MediaQuery>
-                            <Header></Header>
+                header={<PremadeHeader />
+                    // <Box pb={120}>
+                    //     <HeaderMantine height={60} p="md">
+                    //         <MediaQuery largerThan="sm" styles={{ display: "none" }}>
+                    //             <Burger
+                    //                 opened={opened}
+                    //                 onClick={() => setOpened((o) => !o)}
+                    //                 size="sm"
+                    //                 color={themeLayout.colors.gray[6]}
+                    //                 mr="xl"
+                    //             />
+                    //         </MediaQuery>
+                    //         <Header></Header>
 
-                        </div>
-                    </HeaderMantine>
+
+                    //     </HeaderMantine>
+                    // </Box>
                 }
-                footer={<Footer />}
+                footer={<PremadeFooterLinks data={data} />}
 
 
             > <Outlet /> </AppShell>

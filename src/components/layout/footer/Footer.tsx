@@ -1,0 +1,26 @@
+import { Affix, Button, Center, Footer as FooterMantine, Transition } from "@mantine/core"
+import { useWindowScroll } from "@mantine/hooks"
+import { IconArrowUp } from "@tabler/icons";
+export const Footer = () => {
+    const [scroll, scrollTo] = useWindowScroll();
+    return (
+        <FooterMantine height={60} p="md">
+            <Center>
+                App Footer
+            </Center>
+            <Affix position={{ bottom: 20, right: 20 }}>
+                <Transition transition="slide-up" mounted={scroll.y > 0}>
+                    {(transitionStyles) => (
+                        <Button
+                            leftIcon={<IconArrowUp size={16} />}
+                            style={transitionStyles}
+                            onClick={() => scrollTo({ y: 0 })}
+                        >
+                            Scroll to top
+                        </Button>
+                    )}
+                </Transition>
+            </Affix>
+        </FooterMantine>
+    )
+}
