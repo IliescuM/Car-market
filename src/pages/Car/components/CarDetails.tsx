@@ -15,7 +15,7 @@ export const CarDetails = ({ car }: ICarDetailsProps) => {
         <div >
 
             <Paper
-                className={clsx(classes.movieCard, true && classes.movieCard2, classes)}
+                className={clsx(classes.carCard, true && classes.carCard2, classes)}
                 shadow='sm'
                 p='lg'
                 radius='xs'
@@ -24,7 +24,7 @@ export const CarDetails = ({ car }: ICarDetailsProps) => {
 
                 <Image
 
-                    src='https://images.unsplash.com/photo-1591280790477-41b015ef12b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80'
+                    src={car.image}
                     alt='Car'
                     height={500}
                     width={500}

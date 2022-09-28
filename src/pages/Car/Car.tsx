@@ -1,10 +1,7 @@
 import { Alert, Button, Center, Group, Loader, Modal } from "@mantine/core"
 import { IconAlertCircle, IconCheck } from "@tabler/icons"
-import { monitorEventLoopDelay } from "perf_hooks"
 import { useState } from "react"
 import { useParams } from "react-router-dom"
-import { Layout } from "../../components/layout/Layout"
-import { useCar } from "../../hooks/useCar"
 import { useCarQuery } from "../../hooks/queries/useCarQuery"
 import { CarDetails } from "./components/CarDetails"
 import { DeleteCar } from "./components/DeleteCar"
@@ -30,7 +27,7 @@ export const Car = () => {
     }
 
     return <div>
-        {""}
+
 
         <div>
             <Modal
@@ -46,7 +43,7 @@ export const Car = () => {
                 <DeleteCar uuid={car._uuid} />
             </Group>
 
-            <CarDetails car={car} /> {""}
+            <CarDetails car={car} />
         </div>
     </div>
 }

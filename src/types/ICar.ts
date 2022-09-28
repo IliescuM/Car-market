@@ -15,5 +15,6 @@ export interface ICar {
     seller_type: string;
     selling_price: number;
     transmission: string;
+    image: string;
     year: number;
 }

@@ -1,12 +1,9 @@
 import { Alert, Button, TextInput } from "@mantine/core"
 import { IconCheck } from "@tabler/icons"
-import { useState } from "react"
 import { useCreateCarMutation } from "../../../../hooks/mutations/useCreateCarMutation"
 import { useForm } from "react-hook-form"
-import { ICreateCarReq } from "../../../../types/ICreateCarReq"
 import { z as zod } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from "zod/lib"
 import { CarSchema } from "../../../../carsSchema/CarSchema"
 export const CreateCar = () => {
     // const [name, setName] = useState("")

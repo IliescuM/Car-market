@@ -1,5 +1,5 @@
 
-import { Button, Center, Group, Stack } from "@mantine/core";
+import { Button, Center, Divider, Group, Stack } from "@mantine/core";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Navbar, NavLink as MantineNavLink } from "@mantine/core";
 import { IconHome, IconQuestionMark, IconCar } from "@tabler/icons";
@@ -27,6 +27,7 @@ export const Navigation = () => {
                 }
 
             </NavLink>
+            <Divider my="sm" />
             <NavLink to="/about">
                 {
                     ({ isActive }) => <MantineNavLink
@@ -37,6 +38,7 @@ export const Navigation = () => {
                 }
 
             </NavLink>
+            <Divider my="sm" />
 
             <NavLink to="/cars">
                 {
@@ -49,6 +51,7 @@ export const Navigation = () => {
 
                 }
             </NavLink>
+            <Divider my="sm" />
 
 
 

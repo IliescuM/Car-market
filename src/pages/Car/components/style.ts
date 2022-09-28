@@ -1,10 +1,10 @@
 import { createStyles } from "@mantine/core"
 
 export const useStyles = createStyles(theme => ({
-    movieCard: {
+    carCard: {
         backgroundColor: "#343434",
     },
-    movieCard2: {
+    carCard2: {
         color: "white",
     },
 

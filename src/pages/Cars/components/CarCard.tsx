@@ -28,7 +28,7 @@ export const CarCard = ({ car }: ICarCardProps) => {
                 <Image
 
 
-                    src='https://images.unsplash.com/photo-1591280790477-41b015ef12b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80'
+                    src={car.image}
                     height={600}
 
                     alt='Car'
@@ -47,7 +47,7 @@ export const CarCard = ({ car }: ICarCardProps) => {
             <Text size='sm' color="dimmed"> Seller Type: {car.seller_type}</Text>
             <Text size='sm' color="dimmed"> Transmission: {car.transmission}</Text>
             <Text size='sm' color="dimmed"> Owner: {car.owner}</Text>
-            <Text color='red' weight={700}> Price: {car.selling_price}</Text>
+            <Text color='red' weight={700}> Price: {car.selling_price} $</Text>
             <Button variant="light" color="blue" onClick={handleRedirect}>Details</Button>
             <Button variant="light" color="blue" fullWidth mt="md" radius="md">
                 Buy

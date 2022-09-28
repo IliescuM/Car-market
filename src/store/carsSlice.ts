@@ -19,14 +19,3 @@ const carsSlice = createSlice({
 export const { setCars, setSearchByName } = carsSlice.actions;
 export default carsSlice.reducer;
 
-// (state = initialState, action: AnyAction) => {
-//     const { payload, type } = action;
-
-//     switch (type) {
-//         case carsActionTypes.SET_CARS:
-//             return { ...state, cars: payload.cars };
-//         default:
-//             return state;
-//     }
-
-// };

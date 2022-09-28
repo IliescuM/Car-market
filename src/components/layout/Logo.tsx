@@ -11,7 +11,7 @@ export const Logo = (prop: { width: number, height: number }) => {
                 borderRadius: '50%',
                 overflow: 'hidden',
                 borderWidth: 3,
-                margin: 5
+                margin: 3
 
             }}
 

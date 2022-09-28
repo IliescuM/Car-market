@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@hookform/resolvers": "^2.9.8",
+    "@mantine/carousel": "^5.4.1",
     "@mantine/core": "^5.4.0",
     "@mantine/hooks": "^5.4.0",
     "@reduxjs/toolkit": "^1.8.5",
