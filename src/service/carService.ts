@@ -17,6 +17,7 @@ export const getCar = async (uuid: String) => {
     return data
 }
 export const postCar = async (req: ICreateCarReq) => {
+
     const { data } = await axiosInstance.post<{ items: ICar[] }>('/cars', [req])
     return data
 }

@@ -46,6 +46,7 @@ export function AuthenticationForm(props: PaperProps) {
         })
 
     }
+    console.log(isError)
     if (!isError) {
         localStorage.setItem('user', users.username)
     }
@@ -73,7 +74,7 @@ export function AuthenticationForm(props: PaperProps) {
 
 
     return (
-        <div> {!isError &&
+        <div> {users.username &&
             <Alert
                 icon={<IconCheck size={16} />}
                 title="Succces!"

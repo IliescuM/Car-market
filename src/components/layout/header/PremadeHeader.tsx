@@ -34,8 +34,11 @@ import {
 } from '@tabler/icons';
 import { useState } from 'react';
 import { useNavigate, useNavigation } from 'react-router-dom';
+import { useLogoutUserSelector } from '../../../hooks/selectors/useLogoutUserSelector';
+import { logoutUser } from '../../../store/userSlice';
 import { Logo } from '../Logo';
 import { AuthenticationForm } from './Authentication';
+
 
 const useStyles = createStyles((theme) => ({
     link: {
@@ -139,10 +142,10 @@ export function PremadeHeader() {
     const nav = useNavigate();
     const handleLogout = () => {
         localStorage.removeItem("user")
+        logoutUser();
         nav("/home");
 
-
-    }
+    };
 
     return (
         <Box pb={120}>

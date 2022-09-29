@@ -16,6 +16,11 @@ export const getUser = async (uuid: String) => {
     return data
 }
 export const postUser = async (req: ICreateUserReq) => {
+    try {
+        await axiosInstance.delete<IUser>(`/users`)
+    } catch (e) {
+
+    }
     const { data } = await axiosInstance.post<{ items: IUser[] }>('/users', [req])
     return data
 }
