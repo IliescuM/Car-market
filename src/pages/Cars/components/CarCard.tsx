@@ -1,5 +1,5 @@
 import { Badge, Button, Card, Group, Image, Text } from '@mantine/core';
-import { ICar } from '../../../types/ICar';
+import { ICar } from '../../../types/carTypes/ICar';
 import { useNavigate } from "react-router-dom"
 import { useColorScheme } from '@mantine/hooks';
 

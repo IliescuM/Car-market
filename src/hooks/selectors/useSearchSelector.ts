@@ -1,4 +1,4 @@
-import { ICar } from './../../types/ICar';
+import { ICar } from '../../types/carTypes/ICar';
 import { useSelector } from "react-redux"
 import { RootState } from "../../store/store"
 

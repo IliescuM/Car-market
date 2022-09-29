@@ -1,9 +1,9 @@
 import axios from "axios"
 import { Z_UNKNOWN } from "zlib"
-import { ICar } from "../types/ICar"
-import { ICarPagination } from "../types/ICarsPagination"
-import { ICreateCarReq } from '../types/ICreateCarReq'
-import { IUpdateCarReq } from "../types/IUpdateCarReq"
+import { ICar } from "../types/carTypes/ICar"
+import { ICarPagination } from "../types/carTypes/ICarsPagination"
+import { ICreateCarReq } from '../types/carTypes/ICreateCarReq'
+import { IUpdateCarReq } from "../types/carTypes/IUpdateCarReq"
 const axiosInstance = axios.create({
     baseURL: "http://localhost:5004"
 

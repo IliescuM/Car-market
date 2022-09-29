@@ -1,6 +1,6 @@
-import { keyBuilder } from '../../keyBuilder';
+import { carKeyBuilder } from '../../keyBuilders/carKeyBuilder';
 import { getCar } from '../../service/carService';
 import { useQuery } from '@tanstack/react-query';
 export const useCarQuery = (uuid: string) => {
-    return useQuery(keyBuilder.car(uuid), () => getCar(uuid))
+    return useQuery(carKeyBuilder.car(uuid), () => getCar(uuid))
 }

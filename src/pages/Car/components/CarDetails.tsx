@@ -2,7 +2,7 @@ import { Badge, Button, Card, Center, Group, Image, Paper, Text, Title } from "@
 import { useColorScheme } from "@mantine/hooks"
 import clsx from "clsx"
 import React from "react"
-import { ICar } from "../../../types/ICar"
+import { ICar } from "../../../types/carTypes/ICar"
 import { useStyles } from "./style"
 
 

@@ -13,7 +13,6 @@ export const Cars = () => {
     const [opened, setOpened] = useState(false);
     const { isLoading, isError, data: cars } = useCarsQuery()
     const carsRedux = useCarSelector();
-    console.log(carsRedux);
     const filteredCars = useCarFilterByNameSelector();
 
 

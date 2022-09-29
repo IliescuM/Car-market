@@ -4,7 +4,7 @@ import { useCreateCarMutation } from "../../../../hooks/mutations/useCreateCarMu
 import { useForm } from "react-hook-form"
 import { z as zod } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { CarSchema } from "../../../../carsSchema/CarSchema"
+import { CarSchema } from "../../../../zodSchema/CarSchema"
 export const CreateCar = () => {
     // const [name, setName] = useState("")
     // const [year, setYear] = useState(0)
@@ -46,7 +46,7 @@ export const CreateCar = () => {
             },
             {
                 onSuccess: () => {
-                    console.log("sumbmiting")
+                    console.log("submiting")
                     // setName("")
                     // setYear(0)
                     // setKmDriven(0)

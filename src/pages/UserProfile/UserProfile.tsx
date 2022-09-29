@@ -1,7 +1,7 @@
 import { Layout } from "../../components/layout/Layout"
 
-export const About = () => {
+export const UserProfile = () => {
     return <div>
-        about
+        Profile
     </div>
 }

@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react"
 import { postCar } from "../service/carService"
-import { ICar } from "../types/ICar"
-import { ICreateCarReq } from "../types/ICreateCarReq"
+import { ICar } from "../types/carTypes/ICar"
+import { ICreateCarReq } from "../types/carTypes/ICreateCarReq"
 
 export const useCreateCar = () => {
     const [isLoading, setIsLoading] = useState(false)

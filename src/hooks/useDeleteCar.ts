@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react"
 import { deleteCar, putCar } from "../service/carService"
-import { ICar } from "../types/ICar"
+import { ICar } from "../types/carTypes/ICar"
 
 
 export const useDeleteCar = () => {

@@ -1,5 +1,6 @@
 import { createStyles, Title, SimpleGrid, Text, Button, ThemeIcon, Grid, Col } from '@mantine/core';
 import { IconReceiptOff, IconFlame, IconCircleDotted, IconFileCode, IconCar } from '@tabler/icons';
+import { useNavigate } from 'react-router-dom';
 
 const useStyles = createStyles((theme) => ({
     wrapper: {
@@ -43,6 +44,7 @@ const features = [
 
 export function Landing() {
     const { classes } = useStyles();
+    const nav = useNavigate();
 
     const items = features.map((feature) => (
         <div key={feature.title}>
@@ -81,6 +83,7 @@ export function Landing() {
                         size="lg"
                         radius="md"
                         mt="xl"
+                        onClick={() => nav("/cars")}
                     >
                         Start now
                     </Button>

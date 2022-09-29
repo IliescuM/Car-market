@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { getCar } from "../service/carService"
-import { ICar } from "../types/ICar"
+import { ICar } from "../types/carTypes/ICar"
 
 export const useCar = (uuid: string) => {
     const [car, setCar] = useState<ICar>()

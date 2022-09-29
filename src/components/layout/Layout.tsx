@@ -1,10 +1,9 @@
 import { Navigation } from "./navigation/Navigation";
 import { Outlet } from "react-router-dom";
 import { AppShell, useMantineTheme, Header as HeaderMantine, MediaQuery, Burger, Navbar, Box } from "@mantine/core";
-import { Header } from "./header/Header";
 import { useState } from "react";
 import { PremadeFooterLinks } from "./footer/PremadeFooterLinks";
-import footerData from '../../MockData/footerData.json'
+import footerData from '../../mockData/footerData.json'
 import { PremadeHeader } from "./header/PremadeHeader";
 
 

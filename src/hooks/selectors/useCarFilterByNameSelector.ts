@@ -1,4 +1,4 @@
-import { ICar } from './../../types/ICar';
+import { ICar } from '../../types/carTypes/ICar';
 import { RootState } from '../../store/store';
 import { useSelector } from 'react-redux';
 export const useCarFilterByNameSelector = () => {

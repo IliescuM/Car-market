@@ -1,8 +1,8 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
 import { getCars } from "../service/carService"
-import { ICar } from "../types/ICar"
-import { ICarPagination } from "../types/ICarsPagination"
+import { ICar } from "../types/carTypes/ICar"
+import { ICarPagination } from "../types/carTypes/ICarsPagination"
 
 export const useCars = () => {
     const [cars, setCars] = useState<ICar[]>([])

@@ -18,6 +18,7 @@ import {
     ScrollArea,
     ActionIcon,
     useMantineColorScheme,
+    Modal,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
@@ -31,7 +32,10 @@ import {
     IconSun,
     IconMoonStars,
 } from '@tabler/icons';
+import { useState } from 'react';
+import { useNavigate, useNavigation } from 'react-router-dom';
 import { Logo } from '../Logo';
+import { AuthenticationForm } from './Authentication';
 
 const useStyles = createStyles((theme) => ({
     link: {
@@ -131,6 +135,13 @@ export function PremadeHeader() {
     const { classes, theme } = useStyles();
     const { colorScheme, toggleColorScheme } = useMantineColorScheme();
     const dark = colorScheme === 'dark';
+    const [opened, setOpened] = useState(false);
+    const nav = useNavigate();
+    const handleLogout = () => {
+        localStorage.removeItem("user")
+        nav("/home");
+
+    }
 
     return (
         <Box pb={120}>
@@ -146,8 +157,15 @@ export function PremadeHeader() {
                     </Group>
 
                     <Group className={classes.hiddenMobile} >
-                        <Button variant="default">Log in</Button>
-                        <Button>Sign up</Button>
+                        <Button disabled={!!localStorage.getItem("user")} onClick={() => setOpened(true)} variant="default">Connect</Button>
+                        <Button disabled={!localStorage.getItem("user")} onClick={() => handleLogout()} variant="default">Logout</Button>
+                        <Modal
+                            opened={opened}
+                            onClose={() => setOpened(false)}
+                            title="Authentication">
+                            <AuthenticationForm></AuthenticationForm>
+
+                        </Modal>
                         <ActionIcon
                             variant="outline"
                             color={dark ? 'yellow' : 'blue'}
@@ -187,8 +205,17 @@ export function PremadeHeader() {
                     </a>
                     <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
                     <Group position="center" grow pb="xl" px="md">
-                        <Button variant="default">Log in</Button>
-                        <Button>Sign up</Button>
+
+                        <Button disabled={!localStorage.getItem("user")} onClick={() => setOpened(true)} variant="default">Connect</Button>
+                        <Modal
+                            opened={opened}
+                            onClose={() => setOpened(false)}
+                            title="Authentication">
+                            <AuthenticationForm></AuthenticationForm>
+
+                        </Modal>
+
+
                         <ActionIcon
                             color={dark ? 'yellow' : 'blue'}
                             onClick={() => toggleColorScheme()}

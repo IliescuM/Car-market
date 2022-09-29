@@ -2,9 +2,9 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Alert, TextInput, Button } from "@mantine/core"
 import { IconCheck } from "@tabler/icons"
 import { useForm } from "react-hook-form"
-import { CarSchema } from "../../../carsSchema/CarSchema"
+import { CarSchema } from "../../../zodSchema/CarSchema"
 import { useUpdateCarMutation } from "../../../hooks/mutations/useUpdateCarMutation"
-import { ICar } from "../../../types/ICar"
+import { ICar } from "../../../types/carTypes/ICar"
 import { z as zod } from 'zod'
 
 type IUpdate = {

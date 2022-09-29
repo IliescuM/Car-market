@@ -1,7 +1,7 @@
 import { Button } from "@mantine/core"
 import { useNavigate } from "react-router-dom"
 import { useDeleteCar } from "../../../hooks/useDeleteCar"
-import { IDeleteCar } from "../../../types/IDeleteCar"
+import { IDeleteCar } from "../../../types/carTypes/IDeleteCar"
 
 export const DeleteCar = (uuid: IDeleteCar) => {
     const { isLoading, isError, removeCar, car } = useDeleteCar()

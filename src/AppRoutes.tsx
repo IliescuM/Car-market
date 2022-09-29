@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom"
 import { Layout } from "./components/layout/Layout"
-import { About } from "./pages/About/About"
+import { UserProfile } from "./pages/UserProfile/UserProfile"
 import { Car } from "./pages/Car/Car"
 import { Cars } from "./pages/Cars/Cars"
 import { Home } from "./pages/Home/Home"
@@ -11,9 +11,11 @@ export const AppRoutes = () => {
         <Routes>
             <Route path="/" element={<Layout />}>
                 <Route path='/home' element={<Home />} />
-                <Route path='/about' element={<About />} />
+                <Route path='/profile' element={<UserProfile />} />
                 <Route path='/cars' element={<Cars />} />
                 <Route path='/cars/:uuid' element={<Car />} />
+                <Route path='/users' element={<UserProfile />} />
+                <Route path='/users/:uuid' element={<UserProfile />} />
             </Route>
         </Routes>
     )
