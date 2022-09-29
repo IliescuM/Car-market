@@ -26,18 +26,26 @@ export const UserDetails = ({ user }: IUserDetailsProps) => {
 
                 <Image
 
-                    src={""}
+                    src={"https://t3.ftcdn.net/jpg/02/09/37/00/360_F_209370065_JLXhrc5inEmGl52SyvSPeVB23hB6IjrR.jpg"}
                     alt='Avatar Pic'
-                    height={250}
-                    width={250}
+                    style={{
+                        borderRadius: '50%',
+                        overflow: 'hidden',
+                        borderWidth: 3,
+                        margin: 3
+
+                    }}
+
+
 
                 />
+
                 <Badge color="green" variant="light">
                     Profile
                 </Badge>
                 <Group position="apart" mt="sm" mb="md">
-                    <Text size='xl' align="center" weight={800}>User name: {user.username}</Text>
-                    <Text size='xl' weight={800}> Email: {user.email}</Text>
+                    <Text size='xl' color="dimmed" align="center" weight={800}>User name: {user.username}</Text>
+                    <Text size='xl' color="dimmed" weight={800}> Email: {user.email}</Text>
                 </Group>
 
 
