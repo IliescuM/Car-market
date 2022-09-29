@@ -3,7 +3,7 @@ export const Logo = (prop: { width: number, height: number }) => {
     return (
         <Image
 
-            src='https://i.ibb.co/Ybpzhwj/White-and-Brown-Vintage-Car-Logo.png'
+            src='https://i.ibb.co/bvwF6Rx/White-and-Brown-Vintage-Car-Logo-1.png'
             alt='Logo'
             style={{
                 width: prop.width,

@@ -15,7 +15,9 @@ export const CarSchema = () => {
         selling_price: zod.string().refine(val => Number(val) > 0, {
             message: "not a number",
         }),
+        image: zod.string().url(),
         fuel: zod.string().min(3).max(200),
+
     })
 
     return {

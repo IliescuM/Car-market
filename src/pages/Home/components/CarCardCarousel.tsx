@@ -7,7 +7,7 @@ import { useCarsQuery } from '../../../hooks/queries/useCarsQuery';
 
 const useStyles = createStyles((theme) => ({
     card: {
-        height: 440,
+        height: 500,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',

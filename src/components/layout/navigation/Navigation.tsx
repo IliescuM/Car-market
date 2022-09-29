@@ -15,7 +15,7 @@ export const Navigation = () => {
 
 
         <Stack spacing="xl">
-            <Center><Counter></Counter></Center>
+            {/* <Center><Counter></Counter></Center> */}
 
             <NavLink to="/home">
                 {
@@ -28,18 +28,6 @@ export const Navigation = () => {
 
             </NavLink>
             <Divider my="sm" />
-            <NavLink to="/about">
-                {
-                    ({ isActive }) => <MantineNavLink
-                        active={isActive}
-                        label="About"
-                        icon={<IconQuestionMark />}
-                    />
-                }
-
-            </NavLink>
-            <Divider my="sm" />
-
             <NavLink to="/cars">
                 {
                     ({ isActive }) => <MantineNavLink
@@ -50,6 +38,20 @@ export const Navigation = () => {
                     />
 
                 }
+            </NavLink>
+
+            <Divider my="sm" />
+
+
+            <NavLink to="/about">
+                {
+                    ({ isActive }) => <MantineNavLink
+                        active={isActive}
+                        label="About"
+                        icon={<IconQuestionMark />}
+                    />
+                }
+
             </NavLink>
             <Divider my="sm" />
 

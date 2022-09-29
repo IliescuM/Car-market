@@ -1,5 +1,4 @@
 import { keyBuilder } from '../../keyBuilder';
-import { Car } from '../../pages/Car/Car';
 import { postCar } from '../../service/carService';
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 

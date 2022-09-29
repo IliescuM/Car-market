@@ -1,7 +1,6 @@
 import { Alert, Button, Center, Grid, Group, Loader, Modal, Text, TextInput } from "@mantine/core"
 import { IconAlertCircle, IconCheck, IconSearch } from "@tabler/icons"
 import { useState } from "react"
-import { useLocation } from "react-router-dom"
 import { useCarsQuery } from "../../hooks/queries/useCarsQuery"
 import { useCarFilterByNameSelector } from "../../hooks/selectors/useCarFilterByNameSelector"
 import { useCarSelector } from "../../hooks/selectors/useCarSelector"

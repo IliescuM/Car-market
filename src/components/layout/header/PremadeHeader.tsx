@@ -167,18 +167,25 @@ export function PremadeHeader() {
                 onClose={closeDrawer}
                 size="100%"
                 padding="md"
-                title="Navigation"
+                title="Menu"
                 className={classes.hiddenDesktop}
                 zIndex={1000000}
             >
                 <ScrollArea sx={{ height: 'calc(100vh - 60px)' }} mx="-md">
                     <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
 
-                    <a href="#" className={classes.link}>
+                    <a href="/home" className={classes.link}>
                         Home
                     </a>
                     <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
-
+                    <a href="/cars" className={classes.link}>
+                        Cars
+                    </a>
+                    <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
+                    <a href="/about" className={classes.link}>
+                        Home
+                    </a>
+                    <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
                     <Group position="center" grow pb="xl" px="md">
                         <Button variant="default">Log in</Button>
                         <Button>Sign up</Button>
@@ -191,6 +198,8 @@ export function PremadeHeader() {
                         </ActionIcon>
 
                     </Group>
+                    <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
+
 
                 </ScrollArea>
             </Drawer>

@@ -33,7 +33,8 @@ export const UpdateCar = ({ car }: IUpdate) => {
             transmission: car.transmission,
             owner: car.owner,
             selling_price: String(car.selling_price),
-            fuel: car.fuel
+            fuel: car.fuel,
+            image: car.image
         },
         mode: "onBlur",
         resolver: zodResolver(updateCarSchema)
@@ -132,6 +133,15 @@ export const UpdateCar = ({ car }: IUpdate) => {
                     withAsterisk type='number'
                     error={formState.errors?.selling_price?.message}
                     {...register('selling_price')}
+                />
+                <TextInput
+                    // onChange={e => setName(e.target.value)}
+                    placeholder="Image URL"
+                    label='Image URL'
+                    // value={name}
+                    withAsterisk
+                    error={formState.errors?.image?.message}
+                    {...register('image')}
                 />
                 <Button loading={isLoading} type="submit" mt={20}>Update Car</Button>
 

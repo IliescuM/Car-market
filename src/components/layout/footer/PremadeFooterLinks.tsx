@@ -112,7 +112,7 @@ export function PremadeFooterLinks({ data }: FooterLinksProps) {
     const { classes } = useStyles();
 
     const groups = data.map((group) => {
-        const links = group.links.map((link, index) => (
+        const links = group.links.map((link) => (
             <Anchor
                 className={classes.link}
                 size="sm"
@@ -121,17 +121,7 @@ export function PremadeFooterLinks({ data }: FooterLinksProps) {
                 {link.label}
             </Anchor>
 
-            // <Text<'a'>
-            //     key={index}
-            //     className={classes.link}
-            //     component="a"
-            //     href={link.link}
-            //     onClick={(event) => event.preventDefault()}
 
-
-            // >
-            //     {link.label}
-            // </Text>
         ));
 
         return (

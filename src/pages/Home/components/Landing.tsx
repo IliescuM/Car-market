@@ -1,5 +1,5 @@
 import { createStyles, Title, SimpleGrid, Text, Button, ThemeIcon, Grid, Col } from '@mantine/core';
-import { IconReceiptOff, IconFlame, IconCircleDotted, IconFileCode } from '@tabler/icons';
+import { IconReceiptOff, IconFlame, IconCircleDotted, IconFileCode, IconCar } from '@tabler/icons';
 
 const useStyles = createStyles((theme) => ({
     wrapper: {
@@ -19,25 +19,25 @@ const useStyles = createStyles((theme) => ({
 const features = [
     {
         icon: IconReceiptOff,
-        title: 'Free and easy to buy',
-        description: 'All packages are published under MIT license, you can use Mantine in any project',
+        title: 'Free use and easy to buy',
+        description: 'All cars are published under  license, you can buy cars in any country.',
     },
     {
-        icon: IconFileCode,
-        title: 'TypeScript based',
-        description: 'Build type safe applications, all components and hooks export types',
+        icon: IconCar,
+        title: 'Car check',
+        description: 'Before a vehicle is listed, it is extensively inspected.',
     },
     {
         icon: IconCircleDotted,
-        title: 'No annoying focus ring',
+        title: 'No annoying paperwork',
         description:
-            'With new :focus-visible selector focus ring will appear only when user navigates with keyboard',
+            'Buying a car is now easier than ever thanks to new document processing software.',
     },
     {
         icon: IconFlame,
         title: 'Flexible',
         description:
-            'Customize colors, spacing, shadows, fonts and many other settings with global theme object',
+            'With a diverse choice of cars, you may customize the color, engine, gearbox type, and many other options.',
     },
 ];
 

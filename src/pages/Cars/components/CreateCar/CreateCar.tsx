@@ -25,7 +25,8 @@ export const CreateCar = () => {
             transmission: "",
             owner: "",
             selling_price: "0",
-            fuel: ""
+            fuel: "",
+            image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2160&q=80"
         },
         mode: "onBlur",
         resolver: zodResolver(createCarSchema)
@@ -144,6 +145,16 @@ export const CreateCar = () => {
                 type='number'
                 error={formState.errors?.selling_price?.message}
                 {...register('selling_price')}
+            />
+            <TextInput
+                // onChange={e => setSelling_price(Number(e.target.value))}
+
+                placeholder="Image URL"
+                label='Image URL'
+                // value={selling_price}
+                withAsterisk
+                error={formState.errors?.image?.message}
+                {...register('image')}
             />
             <Button loading={isLoading} type="submit" mt={20}>Create Car</Button>
 
