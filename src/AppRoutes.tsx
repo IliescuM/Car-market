@@ -15,7 +15,7 @@ export const AppRoutes = () => {
                 <Route path='/cars' element={<Cars />} />
                 <Route path='/cars/:uuid' element={<Car />} />
                 <Route path='/users' element={<UserProfile />} />
-                <Route path='/users/:uuid' element={<UserProfile />} />
+                <Route path='/users/:User_uuid' element={<UserProfile />} />
             </Route>
         </Routes>
     )

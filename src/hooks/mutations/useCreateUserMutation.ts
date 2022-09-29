@@ -8,6 +8,7 @@ export const useCreateUserMutation = () => {
         onSuccess: () => {
             queryClient.invalidateQueries(userKeyBuilder.users())
 
+
         }
     })
 }

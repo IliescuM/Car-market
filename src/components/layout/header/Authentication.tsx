@@ -20,6 +20,7 @@ import { AuthUserSchema } from '../../../zodSchema/AuthUserSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useCreateUserMutation } from '../../../hooks/mutations/useCreateUserMutation';
 import { IconCheck } from '@tabler/icons';
+import { useCreateUser } from '../../../hooks/useCreateUser';
 
 
 export function AuthenticationForm(props: PaperProps) {
@@ -38,36 +39,46 @@ export function AuthenticationForm(props: PaperProps) {
         mode: "onBlur",
         resolver: zodResolver(authUserSchema)
     })
-    const { isError, isLoading, mutate: createUser, data } = useCreateUserMutation();
-    const handleSubmitForm = async (values: FormFields) => {
+    const { isError, isLoading, users, createUser } = useCreateUser();
+    const handleSubmitForm = (values: FormFields) => {
         createUser({
             ...values,
-        },
-            {
-                onSuccess: () => {
-                    console.log("user created")
-                    localStorage.setItem('user', values.username)
-                    reset()
-
-
-                },
-                onError: (e) => {
-                    console.log(e)
-                }
-            }
-        )
+        })
 
     }
+    if (!isError) {
+        localStorage.setItem('user', users.username)
+    }
+    // const { isError, isLoading, mutate: createUser, data } = useCreateUserMutation();
+    // const handleSubmitForm = async (values: FormFields) => {
+    //     createUser({
+    //         ...values,
+    //     },
+    //         {
+    //             onSuccess: () => {
+    //                 console.log("user created")
+    //                 localStorage.setItem('user', values.username)
+    //                 reset()
+
+
+    //             },
+    //             onError: (e) => {
+    //                 console.log(e)
+    //             }
+    //         }
+    //     )
+
+    // }
 
 
 
     return (
-        <div> {data?.items[0] &&
+        <div> {!isError &&
             <Alert
                 icon={<IconCheck size={16} />}
                 title="Succces!"
                 color="teal">
-                You authenticated {data.items[0].username}
+                You authenticated {users?.username}
             </Alert>}
             <Paper radius="md" p="xl" withBorder {...props}>
                 <Text size="lg" weight={500}>
