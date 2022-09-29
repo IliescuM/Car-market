@@ -24,7 +24,7 @@ export const postCar = async (req: ICreateCarReq) => {
 export const putCar = async (req: IUpdateCarReq) => {
     const { _uuid, ...rest } = req;
 
-    const { data } = await axiosInstance.put<ICar>(`/cars/${req._uuid}`, rest)
+    const { data } = await axiosInstance.put<ICar>(`/cars/${_uuid}`, rest)
     return data
 }
 export const deleteCar = async (uuid: String) => {

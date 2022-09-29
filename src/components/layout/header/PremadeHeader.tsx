@@ -33,6 +33,7 @@ import {
     IconMoonStars,
 } from '@tabler/icons';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate, useNavigation } from 'react-router-dom';
 import { useLogoutUserSelector } from '../../../hooks/selectors/useLogoutUserSelector';
 import { logoutUser } from '../../../store/userSlice';
@@ -99,38 +100,7 @@ const useStyles = createStyles((theme) => ({
     },
 }));
 
-// const mockdata = [
-//     {
-//         icon: IconCode,
-//         title: 'Open source',
-//         description: 'This Pokémon’s cry is very loud and distracting',
-//     },
-//     {
-//         icon: IconCoin,
-//         title: 'Free for everyone',
-//         description: 'The fluid of Smeargle’s tail secretions changes',
-//     },
-//     {
-//         icon: IconBook,
-//         title: 'Documentation',
-//         description: 'Yanma is capable of seeing 360 degrees without',
-//     },
-//     {
-//         icon: IconFingerprint,
-//         title: 'Security',
-//         description: 'The shell’s rounded shape and the grooves on its.',
-//     },
-//     {
-//         icon: IconChartPie3,
-//         title: 'Analytics',
-//         description: 'This Pokémon uses its flying ability to quickly chase',
-//     },
-//     {
-//         icon: IconNotification,
-//         title: 'Notifications',
-//         description: 'Combusken battles with the intensely hot flames it spews',
-//     },
-// ];
+
 
 export function PremadeHeader() {
     const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
@@ -139,10 +109,11 @@ export function PremadeHeader() {
     const { colorScheme, toggleColorScheme } = useMantineColorScheme();
     const dark = colorScheme === 'dark';
     const [opened, setOpened] = useState(false);
+    const dispatch = useDispatch();
     const nav = useNavigate();
     const handleLogout = () => {
         localStorage.removeItem("user")
-        logoutUser();
+        dispatch(logoutUser());
         nav("/home");
 
     };

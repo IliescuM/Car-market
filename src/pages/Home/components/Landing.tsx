@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const useStyles = createStyles((theme) => ({
     wrapper: {
-        padding: `${theme.spacing.xl * 2}px ${theme.spacing.xl}px`,
+        padding: `${theme.spacing.xl * 1.8}px ${theme.spacing.xl}px`,
     },
 
     title: {

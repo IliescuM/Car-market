@@ -50,28 +50,6 @@ export function AuthenticationForm(props: PaperProps) {
     if (!isError) {
         localStorage.setItem('user', users.username)
     }
-    // const { isError, isLoading, mutate: createUser, data } = useCreateUserMutation();
-    // const handleSubmitForm = async (values: FormFields) => {
-    //     createUser({
-    //         ...values,
-    //     },
-    //         {
-    //             onSuccess: () => {
-    //                 console.log("user created")
-    //                 localStorage.setItem('user', values.username)
-    //                 reset()
-
-
-    //             },
-    //             onError: (e) => {
-    //                 console.log(e)
-    //             }
-    //         }
-    //     )
-
-    // }
-
-
 
     return (
         <div> {users.username &&
